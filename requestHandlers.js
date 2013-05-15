@@ -4,6 +4,17 @@ var email = require('./email');
 var targetServer = require('./targetServer');
 var configUtils = require('./configUtils');
 
+
+//console colors for beautiful typing
+//Old school ANSI!
+var red, blue, reset, green, white;
+red   = '\033[31m';
+blue  = '\033[34m';
+green = '\033[32m';
+white = '\033[37m';
+reset = '\033[0m';
+
+
 var config = {};
 
 configUtils.getOptions( function (err, data) {
@@ -14,7 +25,7 @@ configUtils.getOptions( function (err, data) {
     else
     {
         config = data;
-        console.log(JSON.stringify(config));
+        console.log(white + "Read  config file" + reset);
     }
 });
 

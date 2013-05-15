@@ -6,5 +6,8 @@
 	],
 	"verbose" : true,
 	"emailEnabled" : true,
-	"parsingEnabled" : true
+	"parsingEnabled" : true,
+	"gitRepo" : "http://trololol",
+	"gitFolder" : "/home/sebastian/test/",
+	"launch" : "/home/sebastian/nodetest"
 }
