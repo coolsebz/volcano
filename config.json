@@ -1,0 +1,10 @@
+{
+	"messageFormat" : "json",
+	"emails" : [
+		"sebi@2o.com",
+		"cipri@2o.com"
+	],
+	"verbose" : true,
+	"emailEnabled" : true,
+	"parsingEnabled" : true
+}
