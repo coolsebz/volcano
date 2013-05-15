@@ -9,5 +9,6 @@
 	"parsingEnabled" : true,
 	"gitRepo" : "http://trololol",
 	"gitFolder" : "/home/sebastian/test/",
-	"launch" : "/home/sebastian/nodetest"
+	"launch" : "node",
+	"launchArgs" : "server.js"
 }

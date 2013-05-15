@@ -34,8 +34,23 @@ function handlePush (response, postData)
 {
     var parsed = parser.parseMessage(postData);
 
-    console.log(" this is the parsed data: ");
-    console.log(JSON.stringify(parsed));
+    console.log(blue + "New commit with message: ");
+    console.log(white + parsed.commits[0].message + reset);
+
+
+    //The git pull
+    console.log(white + "Getting the latest ... " + reset);
+    targetServer.getLatest(config.gitFolder, config.gitRepo);
+    console.log(green + "DONE!" + reset);
+
+
+    //Restarting the server
+    console.log(white + "Restarting ... " + reset);
+    targetServer.startLatest(config.launch, config.launchArgs);
+    console.log(green + "DONE!" + reset);
+
+
+    console.log(red + getCompleteTime() + reset);
 
     response.writeHead(200, {"Content-Type":"text/plain"});
     response.end();
@@ -52,7 +67,18 @@ function sendEmail (response, postData)
 //    PRIVATE FUNCTIONS
 
 
-//function
+function getCompleteTime ()
+{
+    var currentdate = new Date();
+    var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+    return datetime;
+}
 
 
 //module exports
