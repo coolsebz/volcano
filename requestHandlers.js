@@ -14,7 +14,6 @@ green = '\033[32m';
 white = '\033[37m';
 reset = '\033[0m';
 
-
 var config = {};
 
 configUtils.getOptions( function (err, data) {
